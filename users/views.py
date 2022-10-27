@@ -33,12 +33,3 @@ class UserDetailAPIView(APIView):
         serializer = UserDetialSerializer(user)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
-# class RegisterView(APIView):
-#     def post(self, request, *args, **kwargs):
-#         data = request.data
-#         if data.get('is_doctor'):
-#
-#         serializer = UserSerializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         serializer.save()
-#         return Response(serializer.data)

@@ -64,13 +64,3 @@ class DoctorRegistrationSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['password'] = make_password(validated_data['password'])
         return super().create(validated_data)
-
-# if validated_data['is_doctor']:
-#     if validated_data['speciality'] and validated_data['polyclinic'] and validated_data['room']:
-#         user = User.objects.create_user(is_active=False, **validated_data)
-#         return user
-#     else:
-#         raise APIException(detail={
-#             "success": False,
-#             "error": "xatolik doctor uchun hmma malumotlar toliq emas"
-# })
